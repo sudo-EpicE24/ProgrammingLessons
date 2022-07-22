@@ -19,10 +19,6 @@ import com.ctre.phoenix.led.TwinkleAnimation.TwinklePercent;
 
 import edu.wpi.first.networktables.NetworkTableInstance;
 
-
-import frc.robot.RobotContainer;
-import frc.robot.Constants.CandleConstants;
-
 /** Add your docs here. */
 public class Candle {
     private static Candle CANDLE = null;
@@ -31,7 +27,8 @@ public class Candle {
 
     private int climbStages = 14;
 
-    private CANdle candle = new CANdle(CandleConstants.CANDLE_ID);
+    private final int CANDLE_ID = -1;
+    private CANdle candle = new CANdle(CANDLE_ID);
 
 
     public enum LEDState {
@@ -231,23 +228,23 @@ public class Candle {
 
         if (currentState == LEDState.PreMatch) {
 
-            if (NetworkTableInstance.getDefault().isConnected()) {
-                RobotContainer.setTeamColor();
+            // if (NetworkTableInstance.getDefault().isConnected()) {
+            //     RobotContainer.setTeamColor();
 
-                if (RobotContainer.getTeamColor()) {
-                    // Red team
+            //     if (RobotContainer.getTeamColor()) {
+            //         // Red team
 
-                    candle.animate(new SingleFadeAnimation(255, 0, 0, 0, 0.1, 120, 8), 1);
+            //         candle.animate(new SingleFadeAnimation(255, 0, 0, 0, 0.1, 120, 8), 1);
 
-                } else {
-                    // Blue Team
-                    candle.animate(new SingleFadeAnimation(0, 0, 255, 0, 0.1, 120, 8), 1);
+            //     } else {
+            //         // Blue Team
+            //         candle.animate(new SingleFadeAnimation(0, 0, 255, 0, 0.1, 120, 8), 1);
 
-                }
-            } else {
+            //     }
+            // } else {
 
                 candle.animate(new SingleFadeAnimation(255, 0, 255, 0, 0.1, 120, 8), 1);
-            }
+            // }
         }
 
     }
