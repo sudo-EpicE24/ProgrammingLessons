@@ -6,7 +6,7 @@ Then, have the `CANdle` switch between 2 different colors depending on the outpu
 
 Try visiting the docs and looking for what methods are avalible for the [DigitalInput](https://docs.wpilib.org/en/stable/docs/software/hardware-apis/sensors/digital-inputs-software.html) (The limit switch's representation in code) before moving on to the hints. If you do end up using the hints, make sure to check each link to be able to research on your own. A huge part of coding is reading docs!
 
-As an added challenge, use a debouncer to clean the input from the limit switch.
+As an added challenge, use a [debouncer](https://docs.wpilib.org/en/stable/docs/software/advanced-controls/filters/debouncer.html?highlight=debouncer) to clean the input from the limit switch.
 
 Good luck!
 
@@ -17,8 +17,20 @@ Good luck!
   
 # Hints:
 
-<details> <summary>Where to write your code</summary> <li> Put your code in <a>Robot.java</a>'s <code>teleopPeriodic()</code> method to have it run every <a href="https://docs.wpilib.org/en/stable/docs/software/vscode-overview/creating-robot-program.html#timedrobot">robot loop</a> (20 ms) </details>
+<details><summary>Where to write your code</summary>
 
-<details> <summary> Switching CANdle colors </summary> <li> Switch the candle between solid colors using the <code>Candle</code>'s <code>setAllToColor(r, g, b)</code> method, where each parameter is an integer from 0-255 representing the strength of each color channel </details>
+- Put your code in [Robot.java](src/main/java/frc/robot/Robot.java)'s `teleopPeriodic()` method to have it run every [robot loop](https://docs.wpilib.org/en/stable/docs/software/vscode-overview/creating-robot-program.html#timedrobot") (20 ms)
 
-<details> <summary> Getting input from the limit switch </summary> <li> Get the current state of the limit switch by using the <code>DigitalInput</code>'s <code>get()</code> method to get a boolean value (<code>true</code> for pressed, <code>false</code> for unpressed) </details>
+</details>
+
+<details> <summary> Switching CANdle colors </summary>
+
+- Switch the candle between solid colors using the `Candle`'s `setAllToColor(r, g, b)` method, where each parameter is an integer from 0-255 representing the strength of each color channel
+
+</details>
+
+<details> <summary> Getting input from the limit switch </summary>
+
+- Get the current state of the limit switch by using the `DigitalInput`'s `get()` method to get a boolean value (`true` for pressed, `false` for unpressed)
+ 
+</details>
