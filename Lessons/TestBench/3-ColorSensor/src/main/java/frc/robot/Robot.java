@@ -1,12 +1,14 @@
-// Copyright (c) FIRST and other WPILib contributors.
+ // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.I2C.Port;
+import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.utils.Candle;
+import com.revrobotics.ColorSensorV3;
 
 
 
@@ -19,9 +21,7 @@ import frc.robot.utils.Candle;
 public class Robot extends TimedRobot {
   
   private final Candle candle = Candle.getInstance();
-  private final int limitPort = -1;
-  private final DigitalInput limit = new DigitalInput(limitPort);
-
+  private final ColorSensorV3 colorSensor = new ColorSensorV3(Port.kOnboard);
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -53,11 +53,12 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    if(limit.get()) {
-      candle.setAllToColor(0, 255, 0);
-    } else {
-      candle.setAllToColor(255, 0, 0);
-    }
+    Color sensedColor = colorSensor.getColor();
+    double proximity = colorSensor.getProximity() / 2047.0;
+    int r = (int)(sensedColor.red * 255 * proximity);
+    int g = (int)(sensedColor.green * 255 * proximity);
+    int b = (int)(sensedColor.blue * 255 * proximity);
+    candle.setAllToColor(r, g, b);;
   }
 
   /** This function is called once when the robot is disabled. */
