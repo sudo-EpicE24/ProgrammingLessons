@@ -122,7 +122,7 @@ public class Candle {
     public void periodic() {
 
 
-        if(currentState == LEDState.SolidColor) candle.setLEDs(solidR, solidB, solidG, 255, ledOffset, stripLength);
+        if(currentState == LEDState.SolidColor) candle.setLEDs(solidR, solidG, solidB, 255, ledOffset, stripLength);
 
 
     }

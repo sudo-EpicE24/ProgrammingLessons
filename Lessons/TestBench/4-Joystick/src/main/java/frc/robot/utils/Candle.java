@@ -36,6 +36,8 @@ public class Candle {
     private int solidB = 0;
     private int solidG = 255;
 
+    
+
 
     // This holds all the possible LED states that have been programmed
     public enum LEDState {
@@ -160,24 +162,22 @@ public class Candle {
 
     /**
      * 
-     * Sets all LEDs to a specified color when called, and only needs to be called once
+     * Set all LEDs to a specified color when callede
      * 
-     * @param r
-     * @param g
-     * @param b
+     * @param r Red value 0 (none) - 255 (full)
+     * @param g Green value 0 (none) - 255 (full)
+     * @param b Blue value 0 (none) - 255 (full)
      */
     public void setAllToColor(int r, int g, int b) {
 
-
         if(r == solidR && g == solidG && b == solidB) {
-            // Don't set colors if they are already set
             currentState = LEDState.SolidColor;
             return;
         }
 
         solidR = r;
-        solidB = b;
         solidG = g;
+        solidB = b;
 
         currentState = LEDState.SolidColor;
 

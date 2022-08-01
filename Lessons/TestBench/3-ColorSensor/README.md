@@ -6,7 +6,7 @@ Plug in a color sensor into the onboard I2C port on the RIO
 
 ## Instructions:
 
-First, have the LED strip display a single color, with the intensity based on the proximity to the color sensor. Then, set the color to whatever the color sensor is reading (FYI, the color may not be completely accurate, you may have to switch the G and B channels for whatever reason)
+First, have the LED strip display a single color, with the intensity based on the proximity to the color sensor. Then, set the color to whatever the color sensor is reading.
 
 Good luck!
 
