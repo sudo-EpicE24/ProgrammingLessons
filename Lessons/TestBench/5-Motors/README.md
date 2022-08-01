@@ -6,11 +6,12 @@ Add a Falcon 500 to the RIO, and make sure to note it's CAN ID from Phoenix Tune
 
 ## Instructions:
 
-Make the LED strip's color channels dependant on the triggers, for example the red channel dependant on the left trigger and blue on right trigger. In case you want to access a joystick axis manually, some constants have been given to you in [Constants.java](src/main/java/frc/robot/Constants.java). Make sure to import these by using `import static frc.robot.Constants.JoystickConstants;` with the other imports in [Robot.java](src/main/java/frc/robot/Robot.java).
+Make the Falcon's output dependant on any axis, just like the LED strip.
 
 Good luck!
 
 # Links:
+- [TalonFX API](https://store.ctr-electronics.com/content/api/java/html/classcom_1_1ctre_1_1phoenix_1_1motorcontrol_1_1can_1_1_talon_f_x.html)
 - [Joystick docs](https://docs.wpilib.org/en/stable/docs/software/basic-programming/joystick.html)
 - [Joystick API](https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Joystick.html)
 - [XBoxController docs](https://docs.wpilib.org/en/stable/docs/software/basic-programming/joystick.html#xboxcontroller-class)
@@ -36,8 +37,8 @@ Good luck!
  
 </details>
 
-<details> <summary> Manually choosing a joystick axis </summary>
+<details> <summary> Writing output to Falcon 500 </summary>
 
-- The addresses of each axis are given in [Constants.java](src/main/java/frc/robot/Constants.java), and as long as you have imported the class in a static context, can be accessed with `JoystickConstants.%AXIS%`, where %AXIS% is your desired axis.
+- Use the `WPI_TalonFX`'s `set(percentage)` to set the motor's speed to a percentage output (0.0 for off, 1.0/-1.0 for full forward/backward), or `setVoltage(outputVolts)` to give the motor a specified voltage (0.0 for off, 12.0/-12.0 for full forward/backward)
  
 </details>
