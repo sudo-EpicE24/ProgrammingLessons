@@ -2,7 +2,7 @@
 
 ## Setup:
 
-Add a Falcon 500 to the RIO, and make sure to note it's CAN ID from Phoenix Tuner.
+Add a Falcon 500 to the CAN loop, plug it into power, and make sure to note it's CAN ID from Phoenix Tuner.
 
 ## Instructions:
 

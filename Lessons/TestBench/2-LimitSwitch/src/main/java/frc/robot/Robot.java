@@ -52,13 +52,7 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {
-    if(limit.get()) {
-      candle.setAllToColor(0, 255, 0);
-    } else {
-      candle.setAllToColor(255, 0, 0);
-    }
-  }
+  public void teleopPeriodic() {}
 
   /** This function is called once when the robot is disabled. */
   @Override
