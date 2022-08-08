@@ -52,6 +52,7 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
+<<<<<<<< HEAD:Solutions/TestBench/2-LimitSwitch/src/main/java/frc/robot/Robot.java
   public void teleopPeriodic() {
 
     if(limit.get()){
@@ -60,6 +61,9 @@ public class Robot extends TimedRobot {
       candle.setAllToColor(0, 255, 0);
     }
   }
+========
+  public void teleopPeriodic() {}
+>>>>>>>> d64b505c26a71fbe2c4b438b4fe400b689d154bd:Lessons/TestBench/2-LimitSwitch/src/main/java/frc/robot/Robot.java
 
   /** This function is called once when the robot is disabled. */
   @Override

@@ -53,15 +53,11 @@ public class Robot extends TimedRobot {
    * chooser code above as well.
    */
   @Override
-  public void autonomousInit() {
-    
-  }
+  public void autonomousInit() {}
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {
-    
-  }
+  public void autonomousPeriodic() {}
 
   /** This function is called once when teleop is enabled. */
   @Override
@@ -69,11 +65,15 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
+<<<<<<<< HEAD:Solutions/TestBench/4-Joystick/src/main/java/frc/robot/Robot.java
   public void teleopPeriodic() {
     int lt = (int)(255 * controller.getLeftTriggerAxis());
     int rt = (int)(255 * controller.getRightTriggerAxis());
     candle.setAllToColor(lt, 0, rt);
   }
+========
+  public void teleopPeriodic() {}
+>>>>>>>> d64b505c26a71fbe2c4b438b4fe400b689d154bd:Lessons/TestBench/4-Joystick/src/main/java/frc/robot/Robot.java
 
   /** This function is called once when the robot is disabled. */
   @Override

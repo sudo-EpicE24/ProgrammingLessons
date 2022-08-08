@@ -88,6 +88,11 @@ public class Candle {
 
                 currentState = LEDState.Twinkle;
                 break;
+            case Twinkle:
+                candle.animate(new TwinkleAnimation(255, 255, 255, 255, .5, stripLength, TwinklePercent.Percent30, ledOffset), 1);
+
+                currentState = LEDState.Twinkle;
+                break;
 
             case Larson:
 

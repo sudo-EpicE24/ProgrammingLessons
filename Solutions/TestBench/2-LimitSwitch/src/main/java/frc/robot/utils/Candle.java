@@ -89,6 +89,12 @@ public class Candle {
                 break;
             case Twinkle:
                 candle.animate(new TwinkleAnimation(255, 255, 255, 255, .5, stripLength, TwinklePercent.Percent30, ledOffset), 1);
+<<<<<<<< HEAD:Solutions/TestBench/2-LimitSwitch/src/main/java/frc/robot/utils/Candle.java
+========
+
+                currentState = LEDState.Twinkle;
+                break;
+>>>>>>>> d64b505c26a71fbe2c4b438b4fe400b689d154bd:Lessons/TestBench/2-LimitSwitch/src/main/java/frc/robot/utils/Candle.java
 
                 currentState = LEDState.Twinkle;
                 break;
