@@ -2,11 +2,6 @@
 
 To create a new subsystem in VSCode, right-click on the `Subsystems` folder and select `Create a new class/command` at the very bottom. Then begin typing `subsystem` or find it in the list of options, and select it. You will be prompted to enter a name, our naming convention is `NameSubsystem` where `Name` is whatever you want. 
 
-
-
-
-[Robot.java](src/main/java/frc/robot/Robot.java).
-
 # Links:
 - [Subystem docs](https://docs.wpilib.org/en/stable/docs/software/commandbased/subsystems.html)
 - Click the `Java` link in any WPILib docs for access the the class API (Application Programming Interface), which is helpful for finding methods, constructors, and more details.
