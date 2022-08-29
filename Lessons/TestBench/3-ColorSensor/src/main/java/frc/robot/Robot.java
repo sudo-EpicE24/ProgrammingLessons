@@ -52,7 +52,14 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    Color sensedColor = colorSensor.getColor();
+    double proximity = colorSensor.getProximity() / 2047.0;
+    int r = (int)(sensedColor.red * 255 * proximity);
+    int g = (int)(sensedColor.green * 255 * proximity);
+    int b = (int)(sensedColor.blue * 255 * proximity);
+    candle.setAllToColor(r, g, b);
+  }
 
   /** This function is called once when the robot is disabled. */
   @Override

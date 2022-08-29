@@ -2,7 +2,7 @@
 
 ## Setup:
 
-Make sure there is a color sensor plugged into the onboard I2C port on the RIO
+Plug in a color sensor into the onboard I2C port on the RIO
 
 ## Instructions:
 
