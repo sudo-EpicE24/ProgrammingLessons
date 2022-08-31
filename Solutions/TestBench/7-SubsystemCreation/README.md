@@ -24,6 +24,6 @@ Create a private motor and methods that allow you to interact with the motor fro
 
 <details><summary>How to instance a subsystem</summary>
 
-- Write `private final static ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();` in the `robotInit` method of [Robot.java](src/main/java/frc/robot/Robot.java) to create an instance of the `ExampleSubsystem` named `exampleSubsystem`. Notice our naming conventions with subsystems. 
+- Write `private final static ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();` at the top of [Robot.java](src/main/java/frc/robot/Robot.java) to create an instance of the `ExampleSubsystem` named `exampleSubsystem`. Notice our naming conventions with subsystems. 
 
 </details>
