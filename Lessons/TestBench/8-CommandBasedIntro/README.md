@@ -1,6 +1,6 @@
 # Lesson 8 - Intro to Command-Based
 
-Using the `ExampleCommand` and `ExampleSubsystem` as examples, create a command that runs a motor in the `driveSubsystem` when a button is pressed. Right-click on the `commands` folder, and select `Create a new class/command`, then click on `Command(New)`. If you click on `Command(Old)` things won't work. 
+Using the `ExampleCommand` and `ExampleSubsystem` as examples, create a command that runs a motor in the `IntakeSubsystem` when a button is pressed. Right-click on the `commands` folder, and select `Create a new class/command`, then click on `Command(New)`. If you click on `Command(Old)` things won't work. 
 
 # Links:
 - [Subystem docs](https://docs.wpilib.org/en/stable/docs/software/commandbased/subsystems.html)
