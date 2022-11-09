@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.utils.Candle;
+import frc.robot.utils.Candle.LEDState;
 
 
 
@@ -19,7 +20,7 @@ import frc.robot.utils.Candle;
 public class Robot extends TimedRobot {
   
   private final Candle candle = Candle.getInstance();
-  private final int limitPort = -1;
+  private final int limitPort = 0;
   private final DigitalInput limit = new DigitalInput(limitPort);
 
   /**
@@ -38,9 +39,14 @@ public class Robot extends TimedRobot {
    * <p>This runs after the mode specific periodic functions, but before LiveWindow and
    * SmartDashboard integrated updating.
    */
-  @Override
-  public void robotPeriodic() {
-
+  @Override  public void robotPeriodic() {
+    if(limit.get()) {
+      candle.setAllToColor(0, 20, 128);
+      } else {
+        candle.changeLedState(LEDState.Fire);
+        
+        
+      }
     candle.periodic(); // Used to run the periodic in the Candle Util
 
   }
@@ -52,7 +58,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+
+  }
 
   /** This function is called once when the robot is disabled. */
   @Override

@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.utils.Candle;
+import frc.robot.utils.Candle.LEDState;
+
 import static frc.robot.Constants.JoystickConstants;
 
 /**
@@ -65,7 +67,24 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
- public void teleopPeriodic() {}
+ public void teleopPeriodic() {
+   int R=0, G=0, B=0;
+  if(controller.getYButton()) {
+    candle.changeLedState(LEDState.ColorFlow);
+  }
+  double Rt = controller.getRightTriggerAxis();
+  double Lt = controller.getLeftTriggerAxis();
+  if(controller.getXButton()) {
+    B = (int) Math.floor(Rt*255.0);
+  }
+  if(controller.getAButton()) {
+    G = (int) Math.floor(Rt*255.0);
+  }
+  if(controller.getBButton()) {
+    R = (int) Math.floor(Lt*255.0);
+  }
+  candle.setAllToColor(R, G, B);
+ }
 
   /** This function is called once when the robot is disabled. */
   @Override
